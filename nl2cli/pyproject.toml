@@ -1,0 +1,21 @@
+[project]
+name = "nl2cli"
+version = "0.1.0"
+description = "Agent that converts natural language into a single CLI command (Prompt Engineering exercise)"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40.0",
+    "gradio>=4.44.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+nl2cli-app = "nl2cli.app:main"
+nl2cli-eval = "nl2cli.evaluate:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nl2cli"]
